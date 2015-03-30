@@ -15,41 +15,41 @@ using T5PWebAPI.Models;
 
 namespace T5PWebAPI.Controllers
 {
-    public class Emp_sick_curController : ApiController
+    public class emp_sickController : ApiController
     {
         private T5PWebAPIContext db = new T5PWebAPIContext();
-        // GET api/emp_sick_cur
+        // GET api/emp_sick
         /// <summary>
-        /// Retrieves all emp_sick_cur table records
+        /// Retrieves all emp_sick table records
         /// </summary>
         /// <param name="page">Page number of the data, default is 0</param>
         /// <param name="pageSize">Pagesize of the data, default is int.MaxValue</param>
-        public IQueryable<emp_sick_curDTO> Getemp_sick_cur(int page = 0, int pageSize = int.MaxValue)
+        public IQueryable<emp_sick_curDTO> Getemp_sick(int page = 0, int pageSize = int.MaxValue)
         {
             List<emp_sick_curDTO> theList = new List<emp_sick_curDTO>();
             PropertyInfo[] properties1 = typeof(emp_sick_curDTO).GetProperties();
             PropertyInfo[] properties2 = typeof(emp_sick_cur).GetProperties();
 
-            foreach (var pos in db.emp_sick_cur.OrderBy(c => c.empid).ThenBy(c => c.begindate).Skip(page * pageSize).Take(pageSize))
+            foreach (var pos in db.emp_sick.OrderBy(c => c.empid).ThenBy(c => c.begindate).Skip(page * pageSize).Take(pageSize))
             {
-                emp_sick_curDTO theemp_sick_cur = new emp_sick_curDTO();
+                emp_sick_curDTO theemp_sick = new emp_sick_curDTO();
 
                 foreach (PropertyInfo property1 in properties1)
                 {
                     PropertyInfo theProperty = Array.Find(properties2, p => p.Name.CompareTo(property1.Name) == 0);
                     var value = theProperty.GetValue(pos);
-                    property1.SetValue(theemp_sick_cur, value);
+                    property1.SetValue(theemp_sick, value);
                 }
-                theList.Add(theemp_sick_cur);
+                theList.Add(theemp_sick);
             }
 
             var urlHelper = new UrlHelper(Request);
-            //var thestr = urlHelper.Link("DefaultApi", new { page = page + 1, pageSize = pageSize, controller = "emp_sick_cur" });
-            var totalCount = db.emp_sick_cur.Count();
+            //var thestr = urlHelper.Link("DefaultApi", new { page = page + 1, pageSize = pageSize, controller = "emp_sick" });
+            var totalCount = db.emp_sick.Count();
             var totalPages = (int)Math.Ceiling((double)totalCount / (pageSize > 0 ? pageSize : 1));
 
-            var prevLink = page > 0 ? urlHelper.Link("DefaultApi", new { page = page - 1, pageSize = pageSize, controller = "emp_sick_cur" }) : "";
-            var nextLink = page < db.emp_sick_cur.Count() - 1 ? urlHelper.Link("DefaultApi", new { page = page + 1, pageSize = pageSize, controller = "emp_sick_cur" }) : "";
+            var prevLink = page > 0 ? urlHelper.Link("DefaultApi", new { page = page - 1, pageSize = pageSize, controller = "emp_sick" }) : "";
+            var nextLink = page < db.emp_sick.Count() - 1 ? urlHelper.Link("DefaultApi", new { page = page + 1, pageSize = pageSize, controller = "emp_sick" }) : "";
 
             var paginationHeader = new
             {
@@ -65,9 +65,9 @@ namespace T5PWebAPI.Controllers
             return theList.AsQueryable();
         }
 
-        // GET api/emp_sick_cur/5
+        // GET api/emp_sick/5
         /// <summary>
-        /// Retrieves specific emp_sick_cur table record
+        /// Retrieves specific emp_sick table record
         /// </summary>
         /// <param name="forminstanceid">long forminstanceid</param>
         /// <param name="rowindex">int rowindex</param>
@@ -76,9 +76,9 @@ namespace T5PWebAPI.Controllers
         /// <param name="leavefromdate">DateTime leavefromdate</param>
         /// <param name="leavefromtime">DateTime leavefromtime</param>
         [ResponseType(typeof(emp_sick_cur))]
-        public async Task<IHttpActionResult> Getemp_sick_cur(int empid)
+        public async Task<IHttpActionResult> Getemp_sick(int empid)
         {
-            /*var query = from b in db.emp_sick_cur
+            /*var query = from b in db.emp_sick
                         select new
                         {
                             forminstanceid = b.forminstanceid,
@@ -88,7 +88,7 @@ namespace T5PWebAPI.Controllers
                             leavefromdate = b.leavefromdate,
                             leavefromtime = b.leavefromtime
                         };
-            var parameters = query.ToList().Select(r => new emp_sick_cur
+            var parameters = query.ToList().Select(r => new emp_sick
             {
                 forminstanceid = r.forminstanceid,
                 rowindex = r.rowindex,
@@ -104,7 +104,7 @@ namespace T5PWebAPI.Controllers
                 (p.leavefromtime == leavefromtime));
             return Ok(filteredItems.FirstOrDefault());*/
 
-            return Ok(db.emp_sick_cur.OrderBy(e => e.begindate).Where(
+            return Ok(db.emp_sick.OrderBy(e => e.begindate).Where(
             e => (e.empid == empid)).FirstOrDefault());
 
 

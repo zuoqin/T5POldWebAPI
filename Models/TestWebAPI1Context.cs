@@ -29,6 +29,16 @@ namespace T5PWebAPI.Models
                 .HasRequired(t => t.Empanlv)
                 .WithRequiredPrincipal();
 
+
+            modelBuilder.Entity<emphr>()
+                .HasRequired(t => t.EmpSick)
+                .WithRequiredPrincipal();
+
+            modelBuilder.Entity<emphr>()
+                .HasRequired(t => t.Empanlv)
+                .WithRequiredPrincipal();
+
+
         } 
         public T5PWebAPIContext() : base("name=T5PWebAPIContext")
         {
@@ -55,6 +65,6 @@ namespace T5PWebAPI.Models
         public System.Data.Entity.DbSet<T5PWebAPI.Models.empleavedata> empleavedata { get; set; }
         public System.Data.Entity.DbSet<T5PWebAPI.Models.empleavedata_cancel> empleavedata_cancel { get; set; }
         public System.Data.Entity.DbSet<T5PWebAPI.Models.empanlv> empanlv { get; set; }
-        public System.Data.Entity.DbSet<T5PWebAPI.Models.emp_sick_cur> emp_sick_cur { get; set; }
+        public System.Data.Entity.DbSet<T5PWebAPI.Models.emp_sick_cur> emp_sick { get; set; }
     }
 }

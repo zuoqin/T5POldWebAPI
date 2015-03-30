@@ -121,6 +121,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -230,9 +231,10 @@
     <Compile Include="Controllers\EmpHRController.cs" />
     <Compile Include="Controllers\EmpleavedataController.cs" />
     <Compile Include="Controllers\Empleavedetail_ongoingController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmppositionController.cs" />
     <Compile Include="Controllers\EmpselfController.cs" />
-    <Compile Include="Controllers\Emp_sick_curController.cs" />
+    <Compile Include="Controllers\Emp_sickController.cs" />
     <Compile Include="Controllers\EthnicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InFromController.cs" />

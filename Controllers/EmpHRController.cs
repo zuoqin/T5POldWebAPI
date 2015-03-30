@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Reflection;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Http.Routing;
+using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 using T5PWebAPI.Models;
 
@@ -80,13 +82,14 @@ namespace T5PWebAPI.Controllers
         [ResponseType(typeof(emphr))]
         public async Task<IHttpActionResult> Getemphr(int id)
         {
-            emphr emphr = await db.emphrs.FindAsync(id);
-            if (emphr == null)
+            emphr theEmphr = await db.emphrs.Include(b => b.Empanlv).Include(b=>b.EmpSick).SingleOrDefaultAsync(b=>b.empid == id );
+            if (theEmphr == null)
             {
                 return NotFound();
             }
-
-            return Ok(emphr);
+            //var json = new JavaScriptSerializer().Serialize(theEmphr);
+            //File.WriteAllText( @"e:\\JSON.txt", json);
+            return Ok(theEmphr);
         }
 
         // PUT api/EmpHR/5

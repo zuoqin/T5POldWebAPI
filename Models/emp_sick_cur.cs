@@ -29,5 +29,11 @@ namespace T5PWebAPI.Models
         public Nullable<double> lastcate2used { get; set; }
         public Nullable<double> cate1used { get; set; }
         public Nullable<double> cate2used { get; set; }
+        public Nullable<System.DateTime> combegindate { get; set; }
+        public Nullable<System.DateTime> comenddate { get; set; }
+        public Nullable<double> comcurquota { get; set; }
+        public Nullable<double> comcurearndays { get; set; }
+        public Nullable<double> comcurbalance { get; set; }
+        public Nullable<double> comcurused { get; set; }
     }
 }

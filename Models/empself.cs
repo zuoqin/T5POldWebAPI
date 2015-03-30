@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 
 namespace T5PWebAPI.Models
@@ -10,6 +11,20 @@ namespace T5PWebAPI.Models
     [Table("empself")]
     public class empself
     {
+        public empself()
+        {
+            
+        }
+        public empself(empself theEmpself)
+        {
+            PropertyInfo[] properties = typeof(empself).GetProperties();
+            foreach (PropertyInfo property in properties)
+            {
+                var value = property.GetValue(theEmpself);
+                property.SetValue(this, value);
+            }
+            
+        }
         /// <summary>
         /// Employee ID
         /// 员工序号

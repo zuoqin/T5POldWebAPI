@@ -11,12 +11,31 @@ namespace T5PWebAPI.Models
     [Table("emphr")]
     public class emphr
     {
+        /// <summary>
+        /// Employee ID
+        /// 员工序号
+        /// </summary>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int empid { get; set; }
+        /// <summary>
+        /// Employee Code
+        /// 员工编码
+        /// </summary>
         public string empcode { get; set; }
+        /// <summary>
+        /// Payroll Group ID
+        /// 薪资组序号
+        /// </summary>
         public int payrollgroupid { get; set; }
+        /// <summary>
+        /// Pinyin
+        /// 拼音
+        /// </summary>
         public string pinyin { get; set; }
+        /// <summary>
+        /// Employee Name
+        /// </summary>
         public string english { get; set; }
         public string chinese { get; set; }
         public string big5 { get; set; }
@@ -124,5 +143,9 @@ namespace T5PWebAPI.Models
         public string companysickleaveclass { get; set; }
         public string salutation { get; set; }
         public string othername { get; set; }
+        [ForeignKey("empid")]
+        public virtual emp_sick_cur EmpSick { get; set; }
+        [ForeignKey("empid")]
+        public virtual empanlv Empanlv { get; set; }
     }
 }

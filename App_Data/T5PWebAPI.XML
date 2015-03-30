@@ -601,16 +601,16 @@
             <param name="page">Page number of the data, default is 0</param>
             <param name="pageSize">Pagesize of the data, default is int.MaxValue</param>
         </member>
-        <member name="M:T5PWebAPI.Controllers.Emp_sick_curController.Getemp_sick_cur(System.Int32,System.Int32)">
+        <member name="M:T5PWebAPI.Controllers.emp_sickController.Getemp_sick(System.Int32,System.Int32)">
             <summary>
-            Retrieves all emp_sick_cur table records
+            Retrieves all emp_sick table records
             </summary>
             <param name="page">Page number of the data, default is 0</param>
             <param name="pageSize">Pagesize of the data, default is int.MaxValue</param>
         </member>
-        <member name="M:T5PWebAPI.Controllers.Emp_sick_curController.Getemp_sick_cur(System.Int32)">
+        <member name="M:T5PWebAPI.Controllers.emp_sickController.Getemp_sick(System.Int32)">
             <summary>
-            Retrieves specific emp_sick_cur table record
+            Retrieves specific emp_sick table record
             </summary>
             <param name="forminstanceid">long forminstanceid</param>
             <param name="rowindex">int rowindex</param>
@@ -677,6 +677,35 @@
             <summary>
             Is Quit Staff?
             是否离职员工
+            </summary>
+        </member>
+        <member name="P:T5PWebAPI.Models.emphr.empid">
+            <summary>
+            Employee ID
+            员工序号
+            </summary>
+        </member>
+        <member name="P:T5PWebAPI.Models.emphr.empcode">
+            <summary>
+            Employee Code
+            员工编码
+            </summary>
+        </member>
+        <member name="P:T5PWebAPI.Models.emphr.payrollgroupid">
+            <summary>
+            Payroll Group ID
+            薪资组序号
+            </summary>
+        </member>
+        <member name="P:T5PWebAPI.Models.emphr.pinyin">
+            <summary>
+            Pinyin
+            拼音
+            </summary>
+        </member>
+        <member name="P:T5PWebAPI.Models.emphr.english">
+            <summary>
+            Employee Name
             </summary>
         </member>
         <member name="P:T5PWebAPI.Models.empleavedata_cancel.leaveid">

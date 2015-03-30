@@ -73,6 +73,9 @@ namespace T5PWebAPI.Controllers
             //{
             //    return NotFound();
             //}
+            PropertyInfo[] properties = typeof(empself).GetProperties();
+            
+
 
             //return Ok(theEmpself);
             var theEmpself = await db.empself
@@ -81,8 +84,21 @@ namespace T5PWebAPI.Controllers
                 .Select(b =>
                     new empselfDTO()
                     {
-                        empid = b.empid,
-                        passport1 = b.passport1,
+                        empid = b.empid
+                      ,age = b.age
+                      ,@base = b.@base
+                      ,passport1 = b.passport1
+                      ,dateofissue1 = b.dateofexpiry1
+                      ,dateofexpiry1 = b.dateofexpiry1
+                      ,passport2 = b.passport2
+                      ,dateofissue2 = b.dateofexpiry2
+                      ,dateofexpiry2 = b.dateofexpiry2
+                      ,passport3 = b.passport3
+                      ,dateofissue3 = b.dateofissue3
+                      ,dateofexpiry3 = b.dateofexpiry3
+                      ,Compr_insurance = b.Compr_insurance
+                      ,empcategory = b.empcategory
+                      ,actualworkdays = b.actualworkdays,
                         EmpSickCur = b.EmpSickCur,
                         Empanlv = b.Empanlv
                     })
@@ -91,6 +107,8 @@ namespace T5PWebAPI.Controllers
             {
                 return NotFound();
             }
+            
+            
             return Ok(theEmpself);
         }
 
