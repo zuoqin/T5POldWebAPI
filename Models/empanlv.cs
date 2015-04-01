@@ -7,6 +7,25 @@ using System.Web;
 
 namespace T5PWebAPI.Models
 {
+    class LeaveApplication
+    {
+        //public int empid;
+        public int empid { get; set; }
+        public string leavecode { get; set; }
+        public float leavedays { get; set; }
+        public DateTime leavefromdate { get; set; }
+        public DateTime leavefromtime { get; set; }
+        public float leavehours { get; set; }
+        public DateTime leavetodate { get; set; }
+        public DateTime leavetotime { get; set; }
+        public string notes { get; set; }
+        public DateTime prebirthdate { get; set; }
+        public float referencedays { get; set; }
+        public DateTime specifydate { get; set; }
+        public float todateafternoon { get; set; }
+        public float todatemorning { get; set; }
+    }
+
     [Table("empanlv")]
     public class empanlv
     {

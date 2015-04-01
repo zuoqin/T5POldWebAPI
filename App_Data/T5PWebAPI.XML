@@ -481,14 +481,20 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
-        <member name="M:T5PWebAPI.Controllers.EmpanlvController.Getempanlv(System.Int32,System.Int32)">
+        <member name="M:T5PWebAPI.Controllers.EmpleaveController.GetApproveListByApprover(System.Int32)">
+            <summary>
+            Retrieves list of items to be approved by given approver
+            </summary>
+            <param name="approver">Employee ID, who will approve items</param>
+        </member>
+        <member name="M:T5PWebAPI.Controllers.EmpleaveController.Getempanlv(System.Int32,System.Int32)">
             <summary>
             Retrieves all empanlv table records
             </summary>
             <param name="page">Page number of the data, default is 0</param>
             <param name="pageSize">Pagesize of the data, default is int.MaxValue</param>
         </member>
-        <member name="M:T5PWebAPI.Controllers.EmpanlvController.Getempanlv(System.Int32)">
+        <member name="M:T5PWebAPI.Controllers.EmpleaveController.Getempanlv(System.Int32)">
             <summary>
             Retrieves specific empanlv table record
             </summary>
@@ -498,6 +504,22 @@
             <param name="leavecode">string leavecode</param>
             <param name="leavefromdate">DateTime leavefromdate</param>
             <param name="leavefromtime">DateTime leavefromtime</param>
+        </member>
+        <member name="M:T5PWebAPI.Controllers.EmpleaveController.PutLeave">
+            <summary>
+            Adds new Leave application records
+            Input: LeaveData application
+            </summary>
+            <param name="page">Page number of the data, default is 0</param>
+            <param name="pageSize">Pagesize of the data, default is int.MaxValue</param>
+        </member>
+        <member name="M:T5PWebAPI.Controllers.EmpleaveController.PostLeave">
+            <summary>
+            Adds new Leave application records
+            Input: LeaveData application
+            </summary>
+            <param name="page">Page number of the data, default is 0</param>
+            <param name="pageSize">Pagesize of the data, default is int.MaxValue</param>
         </member>
         <member name="M:T5PWebAPI.Controllers.EmpHRController.Getemphr(System.Int32,System.Int32)">
             <summary>
@@ -594,6 +616,14 @@
             <param name="leavefromdate">DateTime leavefromdate</param>
             <param name="leavefromtime">DateTime leavefromtime</param>
         </member>
+        <member name="M:T5PWebAPI.Controllers.EmployeeController.PostEmployee">
+            <summary>
+            Adds new Leave application records
+            Input: LeaveData application
+            </summary>
+            <param name="page">Page number of the data, default is 0</param>
+            <param name="pageSize">Pagesize of the data, default is int.MaxValue</param>
+        </member>
         <member name="M:T5PWebAPI.Controllers.EmpselfController.Getempself(System.Int32,System.Int32)">
             <summary>
             Retrieves all Empself table records
@@ -624,6 +654,12 @@
             Looks up some data by param.
             </summary>
             <param name="theParam">The ID of the data.</param>
+        </member>
+        <member name="M:T5PWebAPI.Controllers.WorkflowinstancedetailController.GetApproveListByApprover(System.Int32)">
+            <summary>
+            Retrieves list of items to be approved by given approver
+            </summary>
+            <param name="approver">Employee ID, who will approve items</param>
         </member>
         <member name="P:T5PWebAPI.Models.empanlv.year_begin_date">
             <summary>

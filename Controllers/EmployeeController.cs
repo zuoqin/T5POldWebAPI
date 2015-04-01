@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json;
 using T5PWebAPI.Models;
+using WebGrease.Css.Ast.Selectors;
 
 namespace T5PWebAPI.Controllers
 {
@@ -85,6 +87,22 @@ namespace T5PWebAPI.Controllers
             theData.SetData(theEmphr);
             return Ok(theData);
         }
+
+
+        /// <summary>
+        /// Adds new Leave application records
+        /// Input: LeaveData application
+        /// </summary>
+        /// <param name="page">Page number of the data, default is 0</param>
+        /// <param name="pageSize">Pagesize of the data, default is int.MaxValue</param>
+        [ResponseType(typeof (WFData))]
+        public async Task<IHttpActionResult> PostEmployee()
+        {
+            return Ok();
+        }
+
+
+
 
     }
 }

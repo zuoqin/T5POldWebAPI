@@ -10,6 +10,13 @@ namespace T5PWebAPI.Models
     [Table("empleavedata")]
     public class empleavedata
     {
+        public empleavedata()
+        {
+            attachment = "";
+            cancelnote = "";
+            sourcetype = "";
+            requestid = "";
+        }
         //[Key]
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         //[Column(Order = 10)]
